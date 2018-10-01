@@ -33,7 +33,7 @@ func init() {
 
 func main() {
 	fmt.Println("Geometrical shape properties")
-	// <rectangle> es el nombre del paquete y <Area> y <Diagonal> son exportadas
+	// 'rectangle' es el nombre del paquete y 'Area' y 'Diagonal' son exportadas
 	fmt.Printf("area of rectangle %.2f\n", rectangle.Area(rectLen, rectWidth))
 	fmt.Printf("diagonal of the rectangle %.2f ", rectangle.Diagonal(rectLen, rectWidth))
 }
