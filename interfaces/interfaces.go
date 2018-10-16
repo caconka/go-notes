@@ -37,7 +37,7 @@ func totalExpense(s []SalaryCalculator) {
 
 /* --------------------------------------- */
 func findType(i interface{}) {
-	switch i.(type) {
+	switch i.(type) { // type assertion
 	case string:
 		fmt.Printf("̀̀I am a string and my value is %s\n", i.(string))
 	case int:
