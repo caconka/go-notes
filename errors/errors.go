@@ -14,6 +14,8 @@ type error interface {
 
 func assertion(p string) {
 	f, err := os.Open(p)
+	// Assertion, podemos comprobar si es verdadero o falso, con el 'ok' estamos
+	// haciendo la comprobación de que err sea de tipo os.PathError
 	if err, ok := err.(*os.PathError); ok {
 		fmt.Println("File at path", err.Path, "failed to open")
 		return
@@ -48,7 +50,6 @@ func directComp(p string) {
 }
 
 func main() {
-	f, err := os.Open("/test.txt")
 	// 1. Assertion: os.PathError es el tipo del error que da os.Open(), y este
 	// tiene (Path string) para conseguir más info del error
 	assertion("/test.txt")
@@ -59,6 +60,7 @@ func main() {
 	// 3. Direct comparison
 	directComp("[")
 
+	f, err := os.Open("/test.txt")
 	// Forma convencional de comprobar si hay error
 	if err != nil {
 		fmt.Println(err)
